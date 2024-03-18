@@ -1,0 +1,17 @@
+neper comments -------------------------------------  ## comment
+neper -T -reg 1 -crysym cubic
+neper -M -order 2
+neper -V  -imagesize 1100:1000 
+          -showelt1d all 
+          -datacsyslabel $X$:$Y$:$Z$ 
+          -dataedgerad 0.0025
+          -dataelset3dcol id 
+          -dataelt3dedgerad 0.001
+          -dataelt1drad 0.0025 
+          -cameraangle 14 
+          -showcsys 1 
+          -datacsysrad 0.005 
+          -lightsource none 
+          -lightambient 1 
+          -datacsyscoo 0.05:-0.42:0
+neper comments -------------------------------------  ## comment
