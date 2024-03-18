@@ -1,0 +1,362 @@
+
+========================    N   e   p   e   r    =======================
+Info   : A software package for polycrystal generation and meshing.
+Info   : Version 4.8.1-2
+Info   : Built with: gsl|muparser|opengjk|openmp|nlopt|libscotch (full)
+Info   : Running on 96 threads.
+Info   : <https://neper.info>
+Info   : Copyright (C) 2003-2022, and GNU GPL'd, by Romain Quey.
+Info   : Loading initialization file `.neperrc'...
+Info   : ---------------------------------------------------------------
+Info   : MODULE  -T loaded with arguments:
+Info   : [ini file] -reg 1 -crysym cubic
+Info   : [com line] -n 2 -morpho gg -o ../output/gg_tess
+Info   : ---------------------------------------------------------------
+Info   : Reading input data...
+Info   : Creating domain...
+Info   : Creating tessellation...
+Info   :   - Setting seeds... 
+50%
+100%Info   :   - Running tessellation...
+Info   :     >  
+Initial solution: f   =13.325428096
+Info   :     > 
+Iteration      1: fmin=13.325428096 f=13.325428096
+Iteration      2: fmin=13.325428096 f=16.702310122
+Iteration      3: fmin=13.325428096 f=24.286560160
+Iteration      4: fmin=13.325428096 f=14.992731209
+Iteration      5: fmin=8.636519707 f=8.636519707
+Iteration      6: fmin=7.312496466 f=7.312496466
+Iteration      7: fmin=5.602997677 f=5.602997677
+Iteration      8: fmin=5.602997677 f=11.890992376
+Iteration      9: fmin=5.602997677 f=11.494331291
+Iteration     10: fmin=5.602997677 f=6.302476132
+Iteration     11: fmin=5.602997677 f=9.540162667
+Iteration     12: fmin=5.282604647 f=5.282604647
+Iteration     13: fmin=5.282604647 f=6.800440083
+Iteration     14: fmin=5.122878238 f=5.122878238
+Iteration     15: fmin=5.122878238 f=8.988975125
+Iteration     16: fmin=4.830909100 f=4.830909100
+Iteration     17: fmin=4.830909100 f=5.462455088
+Iteration     18: fmin=4.830909100 f=4.953189113
+Iteration     19: fmin=4.830909100 f=4.839057568
+Iteration     20: fmin=4.830909100 f=5.359747340
+Iteration     21: fmin=4.794829828 f=4.794829828
+Iteration     22: fmin=4.134061791 f=4.134061791
+Iteration     23: fmin=4.134061791 f=15.735525481
+Iteration     24: fmin=4.134061791 f=16.736434817
+Iteration     25: fmin=3.934709893 f=3.934709893
+Iteration     26: fmin=3.934709893 f=19.146552856
+Iteration     27: fmin=3.178125883 f=3.178125883
+Iteration     28: fmin=2.918868903 f=2.918868903
+Iteration     29: fmin=2.615523383 f=2.615523383
+Iteration     30: fmin=2.615523383 f=2.762939551
+Iteration     31: fmin=2.358759862 f=2.358759862
+Iteration     32: fmin=2.219594585 f=2.219594585
+Iteration     33: fmin=2.219594585 f=2.992946430
+Iteration     34: fmin=2.219594585 f=2.391435133
+Iteration     35: fmin=2.197291214 f=2.197291214
+Iteration     36: fmin=2.197291214 f=3.468469237
+Iteration     37: fmin=2.071536133 f=2.071536133
+Iteration     38: fmin=2.071536133 f=2.525804375
+Iteration     39: fmin=2.071536133 f=3.421161035
+Iteration     40: fmin=2.071149835 f=2.071149835
+Iteration     41: fmin=2.071149835 f=2.271571666
+Iteration     42: fmin=2.071149835 f=2.213325609
+Iteration     43: fmin=2.071149835 f=2.340177890
+Iteration     44: fmin=1.997523504 f=1.997523504
+Iteration     45: fmin=1.997523504 f=2.842367278
+Iteration     46: fmin=1.978180043 f=1.978180043
+Iteration     47: fmin=1.978180043 f=2.171475407
+Iteration     48: fmin=1.972495371 f=1.972495371
+Iteration     49: fmin=1.972495371 f=1.977470509
+Iteration     50: fmin=1.972495371 f=2.016911811
+Iteration     51: fmin=1.955979199 f=1.955979199
+Iteration     52: fmin=1.955979199 f=2.009378385
+Iteration     53: fmin=1.955467385 f=1.955467385
+Iteration     54: fmin=1.955467385 f=2.017316088
+Iteration     55: fmin=1.952478588 f=1.952478588
+Iteration     56: fmin=1.884759787 f=1.884759787
+Iteration     57: fmin=1.884759787 f=4.059003013
+Iteration     58: fmin=1.884759787 f=1.915484302
+Iteration     59: fmin=1.884759787 f=1.885313305
+Iteration     60: fmin=1.884759787 f=1.932927755
+Iteration     61: fmin=1.884759787 f=1.943653777
+Iteration     62: fmin=1.884759787 f=1.962641297
+Iteration     63: fmin=1.884759787 f=1.978004460
+Iteration     64: fmin=1.884759787 f=1.897629794
+Iteration     65: fmin=1.884759787 f=2.009066012
+Iteration     66: fmin=1.884759787 f=1.940108564
+Iteration     67: fmin=1.884759787 f=1.892354876
+Iteration     68: fmin=1.884759787 f=1.983145639
+Iteration     69: fmin=1.879720880 f=1.879720880
+Iteration     70: fmin=1.879720880 f=4.142210053
+Iteration     71: fmin=1.879720880 f=2.995974267
+Iteration     72: fmin=1.879720880 f=12.521282900
+Iteration     73: fmin=1.879720880 f=1.902891006
+Iteration     74: fmin=1.879720880 f=6.530449394
+Iteration     75: fmin=1.879720880 f=1.883219444
+Iteration     76: fmin=1.879720880 f=1.915821188
+Iteration     77: fmin=1.879720880 f=1.883603457
+Iteration     78: fmin=1.879720880 f=1.904077875
+Iteration     79: fmin=1.879720880 f=1.924954176
+Iteration     80: fmin=1.879720880 f=1.880976309
+Iteration     81: fmin=1.879720880 f=1.954514536
+Iteration     82: fmin=1.879720880 f=1.961322635
+Iteration     83: fmin=1.879720880 f=1.920866258
+Iteration     84: fmin=1.879720880 f=1.936904634
+Iteration     85: fmin=1.879720880 f=2.089810501
+Iteration     86: fmin=1.879720880 f=2.187195276
+Iteration     87: fmin=1.879720880 f=2.461903676
+Iteration     88: fmin=1.826962848 f=1.826962848
+Iteration     89: fmin=1.826962848 f=2.009913716
+Iteration     90: fmin=1.826962848 f=1.893645608
+Iteration     91: fmin=1.826962848 f=1.983780303
+Iteration     92: fmin=1.826962848 f=1.887278145
+Iteration     93: fmin=1.826962848 f=1.890183972
+Iteration     94: fmin=1.826962848 f=1.841431348
+Iteration     95: fmin=1.826962848 f=1.938891662
+Iteration     96: fmin=1.826962848 f=1.843781235
+Iteration     97: fmin=1.822188351 f=1.822188351
+Iteration     98: fmin=1.822188351 f=1.886340627
+Iteration     99: fmin=1.822188351 f=1.945751283
+Iteration    100: fmin=1.817939870 f=1.817939870
+Iteration    101: fmin=1.817939870 f=1.826126852
+Iteration    102: fmin=1.805906099 f=1.805906099
+Iteration    103: fmin=1.805906099 f=1.816600248
+Iteration    104: fmin=1.805906099 f=1.840912054
+Iteration    105: fmin=1.805906099 f=1.809898731
+Iteration    106: fmin=1.805906099 f=1.809391387
+Iteration    107: fmin=1.805906099 f=1.808132633
+Iteration    108: fmin=1.805906099 f=1.813147396
+Iteration    109: fmin=1.803625557 f=1.803625557
+Iteration    110: fmin=1.803625557 f=1.836168094
+Iteration    111: fmin=1.802512798 f=1.802512798
+Iteration    112: fmin=1.802512798 f=1.812306913
+Iteration    113: fmin=1.802512798 f=1.803877983
+Iteration    114: fmin=1.802512798 f=2.200809915
+Iteration    115: fmin=1.802512798 f=2.017761996
+Iteration    116: fmin=1.802512798 f=2.289920907
+Iteration    117: fmin=1.802512798 f=1.919860166
+Iteration    118: fmin=1.802512798 f=1.931984544
+Iteration    119: fmin=1.802512798 f=1.847405908
+Iteration    120: fmin=1.802512798 f=1.875709141
+Iteration    121: fmin=1.802512798 f=1.817749987
+Iteration    122: fmin=1.802512798 f=1.869660091
+Iteration    123: fmin=1.802512798 f=1.812044705
+Iteration    124: fmin=1.802512798 f=1.813655285
+Iteration    125: fmin=1.802512798 f=1.804252062
+Iteration    126: fmin=1.802512798 f=1.822496531
+Iteration    127: fmin=1.802512798 f=1.802931008
+Iteration    128: fmin=1.802512798 f=3.856398645
+Iteration    129: fmin=1.802060443 f=1.802060443
+Iteration    130: fmin=1.802060443 f=2.442777949
+Iteration    131: fmin=1.802060443 f=2.442777949
+Iteration    132: fmin=1.802060443 f=1.877332508
+Iteration    133: fmin=1.802060443 f=1.877332508
+Iteration    134: fmin=1.802060443 f=1.966689860
+Iteration    135: fmin=1.802060443 f=1.832290507
+Iteration    136: fmin=1.802060443 f=1.844664731
+Iteration    137: fmin=1.802060443 f=1.809875106
+Iteration    138: fmin=1.802060443 f=1.855837509
+Iteration    139: fmin=1.802060443 f=1.813872292
+Iteration    140: fmin=1.802060443 f=1.813588106
+Iteration    141: fmin=1.802060443 f=1.839295352
+Iteration    142: fmin=1.802060443 f=1.802602989
+Iteration    143: fmin=1.802060443 f=1.825162291
+Iteration    144: fmin=1.802060443 f=1.804245693
+Iteration    145: fmin=1.802060443 f=1.808829099
+Iteration    146: fmin=1.802060443 f=1.802280929
+Iteration    147: fmin=1.802060443 f=1.803193630
+Iteration    148: fmin=1.802048042 f=1.802048042
+Iteration    149: fmin=1.802048042 f=1.827326088
+Iteration    150: fmin=1.802048042 f=1.822884355
+Iteration    151: fmin=1.802048042 f=1.857085115
+Iteration    152: fmin=1.802048042 f=1.809614277
+Iteration    153: fmin=1.802048042 f=1.807128622
+Iteration    154: fmin=1.802048042 f=1.809666551
+Iteration    155: fmin=1.802048042 f=1.802939810
+Iteration    156: fmin=1.802048042 f=1.814095937
+Iteration    157: fmin=1.801822124 f=1.801822124
+Iteration    158: fmin=1.801822124 f=1.801952816
+Iteration    159: fmin=1.801822124 f=1.803989962
+Iteration    160: fmin=1.800764431 f=1.800764431
+Iteration    161: fmin=1.800764431 f=1.803547237
+Iteration    162: fmin=1.800714542 f=1.800714542
+Iteration    163: fmin=1.800714542 f=1.804475241
+Iteration    164: fmin=1.800649197 f=1.800649197
+Iteration    165: fmin=1.800649197 f=1.801078966
+Iteration    166: fmin=1.800553163 f=1.800553163
+Iteration    167: fmin=1.800553163 f=1.948273966
+Iteration    168: fmin=1.800553163 f=1.873955680
+Iteration    169: fmin=1.800553163 f=1.828191292
+Iteration    170: fmin=1.800553163 f=1.867047267
+Iteration    171: fmin=1.800553163 f=1.868954002
+Iteration    172: fmin=1.800553163 f=1.870760549
+Iteration    173: fmin=1.800553163 f=1.831520337
+Iteration    174: fmin=1.800553163 f=1.834109230
+Iteration    175: fmin=1.800553163 f=1.801887063
+Iteration    176: fmin=1.800553163 f=1.865052897
+Iteration    177: fmin=1.800553163 f=1.808176195
+Iteration    178: fmin=1.800553163 f=1.818070003
+Iteration    179: fmin=1.800553163 f=1.801868428
+Iteration    180: fmin=1.800553163 f=1.805701669
+Iteration    181: fmin=1.800553163 f=1.800629084
+Iteration    182: fmin=1.800553163 f=1.802639392
+Iteration    183: fmin=1.800553163 f=1.800873934
+Iteration    184: fmin=1.800553163 f=1.815082431
+Iteration    185: fmin=1.800553163 f=1.845753549
+Iteration    186: fmin=1.800553163 f=1.835889329
+Iteration    187: fmin=1.800553163 f=1.812554475
+Iteration    188: fmin=1.800553163 f=1.809062143
+Iteration    189: fmin=1.800553163 f=1.814412623
+Iteration    190: fmin=1.800553163 f=1.804752854
+Iteration    191: fmin=1.800553163 f=1.806617152
+Iteration    192: fmin=1.800553163 f=1.802232728
+Iteration    193: fmin=1.800553163 f=1.806357127
+Iteration    194: fmin=1.800553163 f=1.801870768
+Iteration    195: fmin=1.800553163 f=1.801355647
+Iteration    196: fmin=1.800553163 f=1.802440504
+Iteration    197: fmin=1.800553163 f=1.800918304
+Iteration    198: fmin=1.800553163 f=1.801301839
+Iteration    199: fmin=1.800553163 f=1.800708235
+Iteration    200: fmin=1.800553163 f=1.800713115
+Iteration    201: fmin=1.800553163 f=1.800804520
+Iteration    202: fmin=1.800553163 f=1.800885157
+Iteration    203: fmin=1.800553163 f=1.800628612
+Iteration    204: fmin=1.800553163 f=1.800712328
+Iteration    205: fmin=1.800553163 f=1.800605989
+Iteration    206: fmin=1.800553163 f=1.800639815
+Iteration    207: fmin=1.800553163 f=1.800581884
+Iteration    208: fmin=1.800553163 f=1.800565442
+Iteration    209: fmin=1.800553163 f=1.800589535
+Iteration    210: fmin=1.800553163 f=1.800559427
+Iteration    211: fmin=1.800553163 f=1.800577064
+Iteration    212: fmin=1.800553163 f=1.800554974
+Iteration    213: fmin=1.800553163 f=1.800556322
+Iteration    214: fmin=1.800552578 f=1.800552578
+Iteration    215: fmin=1.800552578 f=1.801458250
+Iteration    216: fmin=1.800552578 f=1.800819000
+Iteration    217: fmin=1.800424009 f=1.800424009
+Iteration    218: fmin=1.800424009 f=1.801220086
+Iteration    219: fmin=1.800424009 f=1.801439253
+Iteration    220: fmin=1.800402931 f=1.800402931
+Iteration    221: fmin=1.800402931 f=1.800500257
+Iteration    222: fmin=1.800371126 f=1.800371126
+Iteration    223: fmin=1.800371126 f=1.800634195
+Iteration    224: fmin=1.800345712 f=1.800345712
+Iteration    225: fmin=1.800345712 f=1.800573809
+Iteration    226: fmin=1.800343161 f=1.800343161
+Iteration    227: fmin=1.800343161 f=1.800355013
+Iteration    228: fmin=1.800338531 f=1.800338531
+Iteration    229: fmin=1.800338531 f=1.800381431
+Iteration    230: fmin=1.800335650 f=1.800335650
+Iteration    231: fmin=1.800335650 f=1.802354927
+Iteration    232: fmin=1.800335650 f=1.803471254
+Iteration    233: fmin=1.800335650 f=1.809304254
+Iteration    234: fmin=1.800335650 f=1.800591584
+Iteration    235: fmin=1.800335650 f=1.804506613
+Iteration    236: fmin=1.800335650 f=1.800761968
+Iteration    237: fmin=1.800335650 f=1.801626434
+Iteration    238: fmin=1.800335650 f=1.800364219
+Iteration    239: fmin=1.800335650 f=1.800830418
+Iteration    240: fmin=1.800335650 f=1.800381261
+Iteration    241: fmin=1.800335650 f=1.800470314
+Iteration    242: fmin=1.800335650 f=1.800340008
+Iteration    243: fmin=1.800335650 f=1.800404998
+Iteration    244: fmin=1.800335650 f=1.800339078
+Iteration    245: fmin=1.800335650 f=1.800347206
+Iteration    246: fmin=1.800335650 f=1.800335771
+Iteration    247: fmin=1.800335650 f=1.800347188
+Iteration    248: fmin=1.800335628 f=1.800335628
+Iteration    249: fmin=1.800335628 f=1.800624535
+Iteration    250: fmin=1.800335628 f=1.801098047
+Iteration    251: fmin=1.800335628 f=1.801149700
+Iteration    252: fmin=1.800335628 f=1.800562201
+Iteration    253: fmin=1.800335628 f=1.800588426
+Iteration    254: fmin=1.800335628 f=1.800440684
+Iteration    255: fmin=1.800335628 f=1.800413421
+Iteration    256: fmin=1.800335628 f=1.800511352
+Iteration    257: fmin=1.800335628 f=1.800363746
+Iteration    258: fmin=1.800335628 f=1.800433156
+Iteration    259: fmin=1.800335628 f=1.800356714
+Iteration    260: fmin=1.800335628 f=1.800351429
+Iteration    261: fmin=1.800335628 f=1.800373447
+Iteration    262: fmin=1.800335628 f=1.800340214
+Iteration    263: fmin=1.800335628 f=1.800387461
+Iteration    264: fmin=1.800335628 f=1.800383281
+Iteration    265: fmin=1.800335628 f=1.800498387
+Iteration    266: fmin=1.800335628 f=1.800342088
+Iteration    267: fmin=1.800335628 f=1.800418421
+Iteration    268: fmin=1.800335628 f=1.800344479
+Iteration    269: fmin=1.800335628 f=1.800362426
+Iteration    270: fmin=1.800335628 f=1.800337077
+Iteration    271: fmin=1.800335628 f=1.800339052
+Iteration    272: fmin=1.800335628 f=1.800336036
+Iteration    273: fmin=1.800335628 f=1.800336502
+Iteration    274: fmin=1.800335418 f=1.800335418
+Iteration    275: fmin=1.800335418 f=1.800338420
+Iteration    276: fmin=1.800335209 f=1.800335209
+Iteration    277: fmin=1.800335209 f=1.800480182
+Iteration    278: fmin=1.800335209 f=1.800535354
+Iteration    279: fmin=1.800335209 f=1.801041134
+Iteration    280: fmin=1.800335209 f=1.800352392
+Iteration    281: fmin=1.800335209 f=1.800601554
+Iteration    282: fmin=1.800335209 f=1.800357944
+Iteration    283: fmin=1.800335209 f=1.800420787
+Iteration    284: fmin=1.800335209 f=1.800336862
+Iteration    285: fmin=1.800335209 f=1.800361691
+Iteration    286: fmin=1.800335209 f=1.800338374
+Iteration    287: fmin=1.800335209 f=1.800343158
+Iteration    288: fmin=1.800335209 f=1.800335538
+Iteration    289: fmin=1.800335209 f=1.800339970
+Iteration    290: fmin=1.800335209 f=1.800335363
+Iteration    291: fmin=1.800335209 f=1.800335872
+Iteration    292: fmin=1.800335209 f=1.800335219
+Iteration    293: fmin=1.800335209 f=1.800336045
+Iteration    294: fmin=1.800335166 f=1.800335166
+Iteration    295: fmin=1.800335166 f=1.800346960
+Iteration    296: fmin=1.800335166 f=1.800359680
+Iteration    297: fmin=1.800335166 f=1.800361446
+Iteration    298: fmin=1.800335166 f=1.800343116
+Iteration    299: fmin=1.800335166 f=1.800352453
+Iteration    300: fmin=1.800335166 f=1.800339532
+Iteration    301: fmin=1.800335166 f=1.800336243
+Iteration    302: fmin=1.800335166 f=1.800335745
+Iteration    303: fmin=1.800335166 f=1.800338211
+Iteration    304: fmin=1.800334577 f=1.800334577
+Iteration    305: fmin=1.800334577 f=1.800338061
+Iteration    306: fmin=1.800334442 f=1.800334442
+Iteration    307: fmin=1.800334442 f=1.800334577
+Info   :     > Final solution  : f   =1.800334442 (307 iterations)
+Info   :     > Reached `eps' criterion.
+Info   : Generating crystal orientations...
+Info   : Regularizing tessellation...
+Info   :   - 
+Info   : Writing results...
+Info   :     [o] Writing file `..tess'...
+Info   :     [o] Wrote file `..tess'.
+Info   : Elapsed time: 0.451 secs.
+========================================================================
+
+
+========================    N   e   p   e   r    =======================
+Info   : A software package for polycrystal generation and meshing.
+Info   : Version 4.8.1-2
+Info   : Built with: gsl|muparser|opengjk|openmp|nlopt|libscotch (full)
+Info   : Running on 96 threads.
+Info   : <https://neper.info>
+Info   : Copyright (C) 2003-2022, and GNU GPL'd, by Romain Quey.
+Info   : Loading initialization file `.neperrc'...
+Info   : ---------------------------------------------------------------
+Info   : MODULE  -V loaded with arguments:
+Info   : [ini file] -imagesize 1100:1000 -showelt1d all -datacsyslabel
+         $X$:$Y$:$Z$ -dataedgerad 0.0025 -dataelset3dcol id
+         -dataelt3dedgerad 0.001 -dataelt1drad 0.0025 -cameraangle 14
+         -showcsys 1 -datacsysrad 0.005 -lightsource none -lightambient 1
+         -datacsyscoo 0.05:-0.42:0
+Info   : [com line] ../output/gg_tess.tess -datacellcol white -print
+         ../imgs/gg_tess
+Info   : ---------------------------------------------------------------
+Info   :   - Reading arguments...
+Error  : ../output/gg_tess.tess: no such file.
