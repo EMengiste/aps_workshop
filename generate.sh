@@ -7,7 +7,7 @@ SOURCE=${BASH_SOURCE[0]}
 ##https://stackoverflow.com/a/4774063/23666436
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 NEPER="neper --rcfile ${SCRIPTPATH}/.neperrc"
-num_grains=5
+num_grains=$1
 echo "==========================     Script   ==========================" 
 echo "Info   : Start of Script"
 echo "Info   : Starting path "$PWD 
