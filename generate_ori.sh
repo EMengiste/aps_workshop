@@ -4,7 +4,7 @@ set -e
 #
 #
 echo "Info   : Generating textures ${3} with ${1} grains and $2 crystal symmetry "
-cd ../output/
+cd output/
 $NEPER -T -n $1\
     -crysym $2 \
     -ori $3 \

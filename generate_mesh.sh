@@ -4,7 +4,7 @@ set -e
 #
 echo "Info   : Generating mesh of $1.tess with rcl $2 partitioned for $3 processors"
 #
-cd ../output/
+cd output/
 $NEPER -M $1.tess\
         -rcl $2 \
         -part $3 >>neper_log

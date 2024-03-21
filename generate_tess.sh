@@ -1,11 +1,10 @@
 #!/bin/bash
-
 set -e 
 ## set neper path and runtime configuraiton file
 #
 #
 echo "Info   : Generating tesselation $3 with $1 grains and morphology $2" 
-cd ../output/
+cd output/
 $NEPER -T -n $1 \
     -morpho $2\
     -reg 1 \

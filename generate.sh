@@ -8,6 +8,17 @@ SOURCE=${BASH_SOURCE[0]}
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 NEPER="neper --rcfile ${SCRIPTPATH}/.neperrc"
 num_grains=$1
+#
+if [ -d output ]; then
+  echo "Directory exists."
+else
+    mkdir output
+    mkdir imgs
+    mkdir imgs/tess
+    mkdir imgs/msh
+    mkdir imgs/ori
+fi
+
 echo "==========================     Script   ==========================" 
 echo "Info   : Start of Script"
 echo "Info   : Starting path "$PWD 
