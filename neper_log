@@ -360,3 +360,83 @@ Info   : [com line] ../output/gg_tess.tess -datacellcol white -print
 Info   : ---------------------------------------------------------------
 Info   :   - Reading arguments...
 Error  : ../output/gg_tess.tess: no such file.
+
+========================    N   e   p   e   r    =======================
+Info   : A software package for polycrystal generation and meshing.
+Info   : Version 4.8.1-2
+Info   : Built with: gsl|muparser|opengjk|openmp|nlopt|libscotch (full)
+Info   : Running on 96 threads.
+Info   : <https://neper.info>
+Info   : Copyright (C) 2003-2022, and GNU GPL'd, by Romain Quey.
+Info   : No initialization file found (`..neperrc').
+Info   : ---------------------------------------------------------------
+Info   : MODULE  -V loaded with arguments:
+Info   : [ini file] (none)
+Info   : [com line] ../output/centroidal_tess.msh -dataelt3dcol white
+         -showelt3d partnb==1 -print
+Info   : ---------------------------------------------------------------
+Info   :   - Reading arguments...
+Info   : Elapsed time: 0.008 secs.
+========================================================================
+
+
+========================    N   e   p   e   r    =======================
+Info   : A software package for polycrystal generation and meshing.
+Info   : Version 4.8.1-2
+Info   : Built with: gsl|muparser|opengjk|openmp|nlopt|libscotch (full)
+Info   : Running on 96 threads.
+Info   : <https://neper.info>
+Info   : Copyright (C) 2003-2022, and GNU GPL'd, by Romain Quey.
+Info   : No initialization file found (`..neperrc').
+Info   : ---------------------------------------------------------------
+Info   : MODULE  -V loaded with arguments:
+Info   : [ini file] (none)
+Info   : [com line] ../output/centroidal_tess.msh -dataelt3dcol white
+         -showelt3d partnb==1 -print
+Info   : ---------------------------------------------------------------
+Info   :   - Reading arguments...
+Info   : Elapsed time: 0.008 secs.
+========================================================================
+
+
+========================    N   e   p   e   r    =======================
+Info   : A software package for polycrystal generation and meshing.
+Info   : Version 4.8.1-2
+Info   : Built with: gsl|muparser|opengjk|openmp|nlopt|libscotch (full)
+Info   : Running on 96 threads.
+Info   : <https://neper.info>
+Info   : Copyright (C) 2003-2022, and GNU GPL'd, by Romain Quey.
+Info   : No initialization file found (`..neperrc').
+Info   : ---------------------------------------------------------------
+Info   : MODULE  -V loaded with arguments:
+Info   : [ini file] (none)
+Info   : [com line] ../output/centroidal_tess.msh -dataelt3dcol white
+         -showelt3d partnb==1 -print
+Info   : ---------------------------------------------------------------
+Info   :   - Reading arguments...
+Info   : Elapsed time: 0.009 secs.
+========================================================================
+
+
+========================    N   e   p   e   r    =======================
+Info   : A software package for polycrystal generation and meshing.
+Info   : Version 4.8.1-2
+Info   : Built with: gsl|muparser|opengjk|openmp|nlopt|libscotch (full)
+Info   : Running on 96 threads.
+Info   : <https://neper.info>
+Info   : Copyright (C) 2003-2022, and GNU GPL'd, by Romain Quey.
+Info   : Loading initialization file `.neperrc'...
+Info   : ---------------------------------------------------------------
+Info   : MODULE  -V loaded with arguments:
+Info   : [ini file] -imagesize 1100:1000 -showelt1d all -datacsyslabel
+         $X$:$Y$:$Z$ -dataedgerad 0.0025 -dataelset3dcol id
+         -dataelt3dedgerad 0.001 -dataelt1drad 0.0025 -cameraangle 14
+         -showcsys 1 -datacsysrad 0.005 -lightsource none -lightambient 1
+         -datacsyscoo 0.05:-0.42:0
+Info   : [com line] ../output/centroidal_tess.msh -dataelt3dcol white
+         -showelt3d partnb==1 -print
+Info   : ---------------------------------------------------------------
+Info   :   - Reading arguments...
+Info   : Elapsed time: 0.018 secs.
+========================================================================
+

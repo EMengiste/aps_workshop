@@ -9,7 +9,7 @@ neper -V  -imagesize 1100:1000
           -dataelt3dedgerad 0.001
           -dataelt1drad 0.0025 
           -cameraangle 14 
-          -showcsys 1 
+          -showcsys 0
           -datacsysrad 0.005 
           -lightsource none 
           -lightambient 1 

@@ -1,0 +1,9 @@
+convert-im6.q16: profile 'icc': 'RGB ': RGB color space not permitted on grayscale PNG `rand_pf_100.png' @ warning/png.c/MagickPNGWarningHandler/1667.
+convert-im6.q16: profile 'icc': 'RGB ': RGB color space not permitted on grayscale PNG `rand_pf_110.png' @ warning/png.c/MagickPNGWarningHandler/1667.
+convert-im6.q16: profile 'icc': 'RGB ': RGB color space not permitted on grayscale PNG `rand_pf_111.png' @ warning/png.c/MagickPNGWarningHandler/1667.
+convert-im6.q16: profile 'icc': 'RGB ': RGB color space not permitted on grayscale PNG `cube_pf_100.png' @ warning/png.c/MagickPNGWarningHandler/1667.
+convert-im6.q16: profile 'icc': 'RGB ': RGB color space not permitted on grayscale PNG `cube_pf_110.png' @ warning/png.c/MagickPNGWarningHandler/1667.
+convert-im6.q16: profile 'icc': 'RGB ': RGB color space not permitted on grayscale PNG `cube_pf_111.png' @ warning/png.c/MagickPNGWarningHandler/1667.
+convert-im6.q16: profile 'icc': 'RGB ': RGB color space not permitted on grayscale PNG `goss_pf_100.png' @ warning/png.c/MagickPNGWarningHandler/1667.
+convert-im6.q16: profile 'icc': 'RGB ': RGB color space not permitted on grayscale PNG `goss_pf_110.png' @ warning/png.c/MagickPNGWarningHandler/1667.
+convert-im6.q16: profile 'icc': 'RGB ': RGB color space not permitted on grayscale PNG `goss_pf_111.png' @ warning/png.c/MagickPNGWarningHandler/1667.
