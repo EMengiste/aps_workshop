@@ -5,12 +5,16 @@ set -e
 #
 echo "Info   : Generating tesselation $3 with $1 grains and morphology $2" 
 cd output/
+echo "Info   : $NEPER"
+echo "Info   :     -T -n $1 "
+echo "Info   :     -morpho $2"
+echo "Info   :     -reg 1 "
+echo "Info   :     -o $3 >neper_log"
 $NEPER -T -n $1 \
     -morpho $2\
     -reg 1 \
     -o $3 >neper_log
     
-echo "Info   :     [o] Wrote file ../output/${3}.tess"
 # Read runtime from log file
 tail -n 3 neper_log | head -n 1
 

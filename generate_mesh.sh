@@ -5,10 +5,13 @@ set -e
 echo "Info   : Generating mesh of $1.tess with rcl $2 partitioned for $3 processors"
 #
 cd output/
+echo "Info   : $NEPER "
+echo "Info   :     -M $1.tess"
+echo "Info   :     -rcl $2 "
+echo "Info   :     -part $3 >>neper_log"
 $NEPER -M $1.tess\
         -rcl $2 \
         -part $3 >>neper_log
-
 echo "Info   :     [o] Wrote file ../output/${3}.msh"
 # Read runtime from log file
 tail -n 3 neper_log | head -n 1

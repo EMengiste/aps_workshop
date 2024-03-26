@@ -2,33 +2,30 @@
 
 set -e 
 #
+##https://stackoverflow.com/a/4774063/23666436
+SOURCE=${BASH_SOURCE[0]}
+SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+NEPER="neper --rcfile ${SCRIPTPATH}/.neperrc"
+num_grains=$1
 #
-echo "Info   : Generating textures ${3} with ${1} grains and $2 crystal symmetry "
-cd ../output/
-$NEPER -T -n $1\
-    -crysym $2 \
-    -ori $3 \
-    -for ori \
-    -o $4 >>neper_log
-    
-echo "Info   :     [o] Wrote file ../output/$4.ori"
+echo "==========================     Script   ==========================" 
+echo "Info   : Start of Script"
+echo "Info   : Starting path "$PWD 
+echo "Info   : ---------------------------------------------------------------"
+echo "Info   : Generating textured mesh ${1}  with $2 texture "
+echo $2
+cd imgs/msh
+name=${1:(0):(-4)}
+$NEPER -V ../../output/$1.msh\
+    -dataelsetcol "ori:file(../../output/$2.ori)"\
+    -dataelsetcolscheme ipf\
+    -print ${name}$2 >>neper_log
+echo "Info   :     [o] Wrote file ../imgs/mesh/${4}_pf.png"
 # Read runtime from log file
 tail -n 3 neper_log | head -n 1
-
-cd ../imgs/ori
-$NEPER -V ../../output/$4.ori\
-    -space pf -pfmode symbol \
-    -datapointcol black -datapointedgecol white\
-    -pfpole 1:0:0 \
-    -print ${4}_pf_100 \
-    -pfpole 1:1:0 \
-    -print ${4}_pf_110 \
-    -pfpole 1:1:1 \
-    -print ${4}_pf_111 >>neper_log
-
-convert +append ${4}_pf_100.png ${4}_pf_110.png ${4}_pf_111.png ${4}_pf.png
-
-echo "Info   :     [o] Wrote file ../imgs/ori/${4}_pf.png"
-# Read runtime from log file
-tail -n 3 neper_log | head -n 1
+# #
+echo "Info   : ---------------------------------------------------------------"
+echo "Info   : done!"
+echo "========================================================================"
+#
 exit 0

@@ -26,8 +26,6 @@ $NEPER -V ../../output/$4.ori\
     -pfpole 1:1:1 \
     -print ${4}_pf_111 >>neper_log
 
-convert +append ${4}_pf_100.png ${4}_pf_110.png ${4}_pf_111.png ${4}_pf.png
-
 echo "Info   :     [o] Wrote file ../imgs/ori/${4}_pf.png"
 # Read runtime from log file
 tail -n 3 neper_log | head -n 1
