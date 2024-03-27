@@ -103,8 +103,7 @@ $NEPER -V simulation.sim\
       -print imgs/density_pf_111 >neper_log
 
 # Read runtime from log file
-
-# tail -n 3 neper_log | head -n 1
+tail -n 3 neper_log | head -n 1
 
 echo "Info   : Generating orientation density in rod space"
 $NEPER -V simulation.sim/orispace/rod.msh\
@@ -121,8 +120,24 @@ $NEPER -V simulation.sim/orispace/rod.msh\
   -imagesize 1000:1000 \
   -print imgs/odf-rod_spaceSTEP \
   -endloop >neper_log
-
-# Read runtime from log file
+  
+$NEPER -V simulation.sim/orispace/rod.msh\
+  -loop STEP 0 1 2 \
+  -datanodecol "real:file(simulation.sim/results/mesh/odfn/odfn.stepSTEP)" \
+  -datanodescaletitle "MRD" \
+  -dataeltcol from_nodes \
+  -datanodescale 0.0:0.5:1.0:1.5:2.0:2.5:3.0:3.5 \
+  -showelt1d all \
+  -showcsys 0 \
+  -dataelt1drad 0.002 \
+  -dataelt3dedgerad 0 \
+  -cameracoo 4:4:3 -cameraprojection orthographic -cameraangle 13\
+  -slicemesh "x=0,y=0,z=0" \
+  -showmesh 0 \
+  -imagesize 1000:1000 \
+  -print imgs/odf-rod_space_intSTEP \
+  -endloop >neper_log
+# # Read runtime from log file
 tail -n 3 neper_log | head -n 1
 val_name="orifieldn(var=stress_eq,theta=10)"
 echo "Info   : Generating orientation averaged equivalent stress plots in rod space"
@@ -140,6 +155,22 @@ neper --rcfile none -V simulation.sim/orispace/rod.msh\
   -cameracoo 4:4:3 -cameraprojection orthographic -cameraangle 13\
   -imagesize 1000:1000 \
   -print imgs/${1}_odf-rod_space_stress_STEP\
+  -endloop >neper_log
+
+neper --rcfile none -V simulation.sim/orispace/rod.msh\
+  -loop STEP 0 1 2 \
+  -datanodecol "real:file(simulation.sim/results/mesh/${val_name}/${val_name}.stepSTEP)" \
+  -datanodescaletitle "Stress eqv. (MPa)" \
+  -datanodescale 0:1100\
+  -dataeltcol from_nodes \
+  -showelt3d all\
+  -showelt1d all \
+  -showcsys 0 \
+  -dataelt1drad 0.002 \
+  -dataelt3dedgerad 0 \
+  -cameracoo 4:4:3 -cameraprojection orthographic -cameraangle 13\
+  -imagesize 1000:1000 \
+  -print imgs/${1}_odf-rod_space_stress_STEP_int\
   -endloop >neper_log
 tail -n 3 neper_log | head -n 1
 
@@ -162,7 +193,24 @@ neper --rcfile none -V simulation.sim/orispace/rod.msh\
   -print imgs/${1}_odf-rod_space_strain_STEP\
   -endloop >neper_log
 
-tail -n 3 neper_log | head -n 1
+neper --rcfile none -V simulation.sim/orispace/rod.msh\
+  -loop STEP 0 1 2 \
+  -datanodecol "real:file(simulation.sim/results/mesh/${val_name}/${val_name}.stepSTEP)" \
+  -datanodescaletitle "Strain eqv. (-)" \
+  -datanodescale 0.000:0.100\
+  -showelt3d all\
+  -dataeltcol from_nodes \
+  -showelt1d all \
+  -showcsys 0 \
+  -dataelt1drad 0.002 \
+  -dataelt3dedgerad 0 \
+  -cameracoo 4:4:3 -cameraprojection orthographic -cameraangle 13\
+  -slicemesh "x=0,y=0,z=0" \
+  -showmesh 0 \
+  -imagesize 1000:1000 \
+  -print imgs/${1}_odf-rod_space_strain_STEP_int\
+  -endloop >neper_log
+# tail -n 3 neper_log | head -n 1
 echo "Info   : ---------------------------------------------------------------"
 echo "Info   : done!"
 echo "========================================================================"

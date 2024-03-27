@@ -13,13 +13,19 @@ echo "Info   : Start of Script"
 echo "Info   : Starting path "$PWD 
 echo "Info   : ---------------------------------------------------------------"
 echo "Info   : Generating textured mesh ${1}  with $2 texture "
-echo $2
+# echo $2
 cd imgs/msh
 name=${1:(0):(-4)}
-$NEPER -V ../../output/$1.msh\
-    -dataelsetcol "ori:file(../../output/$2.ori)"\
-    -dataelsetcolscheme ipf\
-    -print ${name}$2 >>neper_log
+
+# $NEPER -V ../../output/$1.msh\
+#     -dataelsetcol "ori:file(../../output/$2.ori)"\
+#     -dataelsetcolscheme ipf\
+#     -print ${name}_msh_$2 >>neper_log
+
+$NEPER -V ../../output/$1.tess\
+    -datacellcol "ori:file(../../output/$2.ori)"\
+    -datacellcolscheme ipf\
+    -print ${name}_tess_$2 >>neper_log
 echo "Info   :     [o] Wrote file ../imgs/mesh/${4}_pf.png"
 # Read runtime from log file
 tail -n 3 neper_log | head -n 1

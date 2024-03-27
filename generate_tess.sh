@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e 
-## set neper path and runtime configuraiton file
+#
+##https://stackoverflow.com/a/4774063/23666436
+SOURCE=${BASH_SOURCE[0]}
+SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 #
 #
 echo "Info   : Generating tesselation $3 with $1 grains and morphology $2" 
