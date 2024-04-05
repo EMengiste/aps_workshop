@@ -10,31 +10,32 @@ NEPER="neper --rcfile ${SCRIPTPATH}/.neperrc"
 
 cd ../dct-hp
 
-$NEPER -T -n from_morpho					\
-	  -morpho "tesr:file(${file}.tesr)"			\
-	  -domain "cylinder(1,.459340,100)"			\
-	  -morphooptilogval "iter(100),val"			\
-	  -morphooptistop itermax=1				\
-	  -o $file-tessini
+# $NEPER -T -n from_morpho					\
+# 	  -morpho "tesr:file(${file}.tesr)"			\
+# 	  -domain "cylinder(1,.459340,100)"			\
+# 	  -morphooptilogval "iter(100),val"			\
+# 	  -morphooptistop itermax=1				\
+# 	  -o $file-tessini
 
-#   -morphooptiobjective "surf,sample(min(voxnb,1000))" 	\
+# #   -morphooptiobjective "surf,sample(min(voxnb,1000))" 	\
 
-$NEPER -T -n from_morpho					\
-       -morpho "tesr:file(${file}.tesr)"			\
-       -domain "cylinder(1,.459340,100)"			\
-       -morphooptilogval "iter,val,valmin,eps,reps"		\
-       -morphooptistop reps=1e-4				\
-       -morphooptiini coo:centroid,weight:radeq			\
-       -statcell vol						\
-       -o $file-tess
-#    -morphooptiobjective "surf,sample(min(voxnb,min(voxnb*0.1,1000)))" \
+# $NEPER -T -n from_morpho					\
+#        -morpho "tesr:file(${file}.tesr)"			\
+#        -domain "cylinder(1,.459340,100)"			\
+#        -morphooptilogval "iter,val,valmin,eps,reps"		\
+#        -morphooptistop reps=1e-4				\
+#        -morphooptiini coo:centroid,weight:radeq			\
+#        -statcell vol						\
+#        -o $file-tess
+# #    -morphooptiobjective "surf,sample(min(voxnb,min(voxnb*0.1,1000)))" \
 
-$NEPER -T -loadtesr dct-hp.tesr -statcell y -for ""
-awk '{if ($1>.22967) {print NR}}' dct-hp.stcell > showcells
+# $NEPER -T -loadtesr dct-hp.tesr -statcell y -for ""
+# awk '{if ($1>.22967) {print NR}}' dct-hp.stcell > showcells
 
-$NEPER -V ${file}.tesr -datacellcol id			\
+$NEPER -V ${file}.tesr -datacellcol ori			\
 	  -datarptedgerad 0					\
 	  -cameraangle 10					\
+	  -showtess 0 					    \
 	  -cameracoo x:-3:2					\
 	  -imagesize 450:900					\
 	  -print $file-tesr					\
@@ -43,7 +44,7 @@ $NEPER -V ${file}.tesr -datacellcol id			\
 
 for f in dct-hp-tessini dct-hp-tess
 do
-  $NEPER -V $f.tess -datacellcol id					\
+  $NEPER -V $f.tess -datacellcol ori					\
 	    -showedge cyl==0					\
 	    -dataedgerad 0.001					\
 	    -cameraangle 10					\

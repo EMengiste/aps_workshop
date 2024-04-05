@@ -14,7 +14,7 @@ echo "LAUNCH FEPX"
 # Run FEPX in parallel
 export GFORTRAN_UNBUFFERED_ALL=n
 
-fepx_dir="/home/etmengiste/code/FEPX-dev/build/fepx"
+fepx_dir="/home/etmengiste/bin/fepx_2-dev"
 
 mpirun -np $SLURM_NTASKS ${fepx_dir}
 

@@ -6,7 +6,6 @@ set -e
 SOURCE=${BASH_SOURCE[0]}
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 NEPER="neper --rcfile ${SCRIPTPATH}/.neperrc"
-num_grains=$1
 #
 echo "==========================     Script   ==========================" 
 echo "Info   : Start of Script"
@@ -15,30 +14,34 @@ echo "Info   : ---------------------------------------------------------------"
 #
 #
 cd output
-# Generate the Rodrigues space fundamental region and a mesh for it.
+# Generate the Rodrigues space fundaments
 
-# neper -T \
-#     -n 1 \
-#     -domain "rodrigues(cubic)" \
-#     -o rod >neper_log
 
-# echo "Info   :     [o] Wrote file output/rod.tess"
-# # Read runtime from log file
-# tail -n 3 neper_log | head -n 1
+if [ -f $1.ori ]; then
+    # echo "Info   :     [o] Wrote file output/rod.msh"
+    $NEPER -V "rod.tess,$1.ori" -datacellcol lightblue \
+        -datacelltrs 0.75 -dataedgerad 0.003 -cameracoo 4:4:3 \
+        -datapointcol black\
+        -cameraprojection orthographic -imagesize 500:500 \
+        -showcsys 0\
+        -cameraangle 13 -print ../imgs/ori/$1
+else 
+    $NEPER -T -loadtess $1.tess -for ori 
+    # echo "Info   :     [o] Wrote file output/rod.msh"
+    $NEPER -V "rod.tess,$1.ori" -datacellcol lightblue \
+        -datacelltrs 0.75 -dataedgerad 0.003 -cameracoo 4:4:3 \
+        -datapointcol black\
+        -cameraprojection orthographic -imagesize 500:500 \
+        -showcsys 0\
+        -cameraangle 13 -print ../imgs/ori/$1
 
-neper -M rod.tess \
-    -cl 0.1 -for sim >neper_log
-
-# echo "Info   :     [o] Wrote file output/rod.msh"
-
+fi
 # Add orientation space info to sim directory. What this is doing is taking
 # the orientations from the polycrystal (mesh) and representing them in
 # Rodrigues space, something called an orientation distribution function, or
 # ODF.
 
-neper -S simulation.sim -orispace fr-cub.msh -resmesh 'odf,odfn'
-
-echo "Info   :     [o] Wrote file output/simulation.sim"
+echo "Info   :     [o] Wrote file ../imgs/ori/ori1"
 # Read runtime from log file
 tail -n 3 neper_log | head -n 1
 exit 0
