@@ -12,28 +12,77 @@ echo "Info   : Start of Script"
 echo "Info   : Starting path "$PWD 
 echo "Info   : ---------------------------------------------------------------"
 #
+cwd=$PWD
 #
 cd output
 # Generate the Rodrigues space fundaments
-
+#
+# Arguments:
+#   $1 = input file name
 
 if [ -f $1.ori ]; then
-    # echo "Info   :     [o] Wrote file output/rod.msh"
     $NEPER -V "rod.tess,$1.ori" -datacellcol lightblue \
         -datacelltrs 0.75 -dataedgerad 0.003 -cameracoo 4:4:3 \
         -datapointcol black\
+        -datapointtrs 0.8\
         -cameraprojection orthographic -imagesize 500:500 \
         -showcsys 0\
-        -cameraangle 13 -print ../imgs/ori/$1
+        -cameraangle 13 -print $cwd/imgs/ori/${1}_rod_space
+    #
+    echo "Info   :     [o] Wrote file output/rod.msh"
+    #
+    $NEPER -V $1.ori\
+        -datapointcol black -datapointedgecol white\
+        -space pf -pfmode symbol \
+        -pfpole 1:0:0 \
+        -print $cwd/imgs/ori/${1}_pf_100 \
+        -pfpole 1:1:0 \
+        -print $cwd/imgs/ori/${1}_pf_110 \
+        -pfpole 1:1:1 \
+        -print $cwd/imgs/ori/${1}_pf_111
+
+    $NEPER -V $1.ori\
+        -datapointcol black -datapointedgecol white\
+        -space ipf -pfmode symbol \
+        -ipfdir x:-y \
+        -print $cwd/imgs/ori/${1}_pf_z \
+        -ipfdir y:-z \
+        -print $cwd/imgs/ori/${1}_pf_y\
+        -ipfdir z:-x \
+        -print $cwd/imgs/ori/${1}_pf_x
 else 
     $NEPER -T -loadtess $1.tess -for ori 
     # echo "Info   :     [o] Wrote file output/rod.msh"
     $NEPER -V "rod.tess,$1.ori" -datacellcol lightblue \
         -datacelltrs 0.75 -dataedgerad 0.003 -cameracoo 4:4:3 \
         -datapointcol black\
+        -datapointtrs 0.8\
         -cameraprojection orthographic -imagesize 500:500 \
         -showcsys 0\
-        -cameraangle 13 -print ../imgs/ori/$1
+        -cameraangle 13 -print $cwd/imgs/ori/${1}_rod_space
+    #
+    echo "Info   :     [o] Wrote file output/rod.msh"
+    #
+    #
+    $NEPER -V $1.ori\
+        -datapointcol black -datapointedgecol white\
+        -space pf -pfmode symbol \
+        -pfpole 1:0:0 \
+        -print $cwd/imgs/ori/${1}_pf_100 \
+        -pfpole 1:1:0 \
+        -print $cwd/imgs/ori/${1}_pf_110 \
+        -pfpole 1:1:1 \
+        -print $cwd/imgs/ori/${1}_pf_111
+
+    $NEPER -V $1.ori\
+        -datapointcol black -datapointedgecol white\
+        -space ipf -pfmode symbol \
+        -ipfdir x:-y \
+        -print $cwd/imgs/ori/${1}_pf_z \
+        -ipfdir y:-z \
+        -print $cwd/imgs/ori/${1}_pf_y\
+        -ipfdir z:-x \
+        -print $cwd/imgs/ori/${1}_pf_x
 
 fi
 # Add orientation space info to sim directory. What this is doing is taking

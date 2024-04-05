@@ -1,15 +1,24 @@
 #!/bin/bash
 set -e 
 #
+neper_post_processing=true
 mesh_plots=true
-pf_plots=true
-rod_ori_plots=true
-rod_stress_plots=true
-rod_strain_plots=true
+pf_plots=false
+rod_ori_plots=TRUE
+rod_stress_plots=false
+rod_strain_plots=false
 ##https://stackoverflow.com/a/4774063/23666436
 SOURCE=${BASH_SOURCE[0]}
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 NEPER="neper --rcfile ${SCRIPTPATH}/.neperrc"
+#
+#
+# Argumnets :
+#     $1 = directory
+#     $2 = start
+#     $3 = incerement
+#     $4 = final
+#
 #
 echo "==========================     Script   ==========================" 
 echo "Info   : Start of Script"
