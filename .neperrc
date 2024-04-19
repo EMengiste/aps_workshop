@@ -1,5 +1,5 @@
 neper comments -------------------------------------  ## comment
-neper -T -reg 1 -crysym cubic
+neper -T -reg 1 -morphooptistop eps=1e-3 
 neper -M -order 2
 neper -V  -imagesize 1100:1000 
           -showelt1d all 

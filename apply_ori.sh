@@ -14,7 +14,9 @@ echo "Info   : Starting path "$PWD
 echo "Info   : ---------------------------------------------------------------"
 echo "Info   : Generating textured mesh ${1}  with $2 texture "
 # echo $2
-cd imgs/msh
+
+cd imgs/tess
+
 name=${1:(0):(-4)}
 
 # $NEPER -V ../../output/$1.msh\

@@ -8,8 +8,25 @@ SOURCE=${BASH_SOURCE[0]}
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 NEPER="neper --rcfile ${SCRIPTPATH}/.neperrc"
 
-cd ../dct-hp
+cd ../dct/dct-hp
+${SCRIPTPATH}/generate_mesh.sh ${file}-tess 0.5 48 ${file}
 
+$NEPER -V ${file}-tess.tess 		\
+	-showcsys 0 \
+	-dataedgerad 0.0005\
+	-showedge "domtype!=1"\
+	-cameraangle 7					\
+	-imagesize 450:900					\
+	-print $file-tess			
+
+$NEPER -V ${file}.msh		\
+	-showcsys 0 \
+	-cameraangle 7					\
+	-dataelt1drad 0.00005\
+	-dataelt3dedgerad 0.0005\
+	-imagesize 450:900					\
+	-print $file-msh					
+exit 0
 # $NEPER -T -n from_morpho					\
 # 	  -morpho "tesr:file(${file}.tesr)"			\
 # 	  -domain "cylinder(1,.459340,100)"			\

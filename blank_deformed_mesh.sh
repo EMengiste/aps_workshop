@@ -17,11 +17,14 @@ $NEPER -V simulation.sim\
     -datanodecoo coo \
     -datanodecoofact 2 \
     -dataelt3dcol white \
+    -cameracoo '-9:9:9'\
     -showelt3d all\
     -showelt1d "elt3d_shown" \
-    -showcsys 0\
+    -datacsyscoo '-1:1:0'\
     -cameraangle 17\
-    -print ${1}_defromed_step_${2}
+    -print ${1}_defromed_step_${2}\
+    -step 0\
+    -print ${1}_undefromed_step_0
 
 
 

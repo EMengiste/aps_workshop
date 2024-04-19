@@ -1,19 +1,31 @@
 #!/bin/bash
 set -e 
 #
-neper_post_processing=true
+neper_post_processing=false
 mesh_plots=true
 pf_plots=false
-rod_ori_plots=TRUE
-rod_stress_plots=false
-rod_strain_plots=false
+rod_ori_plots=true
+rod_stress_plots=true
+rod_strain_plots=true
+max_stress="310"
+max_strain="0.175"
+y_cuttoff="0.2"
+coo_fact=1.5
 ##https://stackoverflow.com/a/4774063/23666436
 SOURCE=${BASH_SOURCE[0]}
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 NEPER="neper --rcfile ${SCRIPTPATH}/.neperrc"
 #
+#image settings
+settings="-dataelt3dedgerad 0.0000001 "
+settings+="-dataelt1drad 0.0015 "
+settings+="-cameraangle 13 "
+settings+="-imagesize 400:900 "
+settings+="-showelt3d all "
+settings+="-showelt1d elt3d_shown "
+settings+="-showcsys 0 "
 #
-# Argumnets :
+# Arguments :
 #     $1 = directory
 #     $2 = start
 #     $3 = incerement
@@ -43,11 +55,14 @@ else
 fi
 
 
-if [ "$neper_post_processing}" == true ] 
+if [ "${neper_post_processing}" == true ] 
   then
   # # # Add polycrystal simulation elt, elset, and mesh scale variables
-  $NEPER -S simulation.sim -reselt "!elt_vol,elt_vol:vol" -reselset "!stress_eq,!strain_eq,!vol,!ori,stress_eq,strain_eq,vol,ori" -resmesh "stress_eq,strain_eq,vol"
-
+  $NEPER -S simulation.sim \
+        -reselt "!elt_vol,elt_vol:vol" \
+        -reselset "!stress_eq,!strain_eq,!vol,!ori,stress_eq,strain_eq,vol,ori" \
+        -resmesh "!stress_eq,!strain_eq,!vol,stress_eq,strain_eq,vol"
+  exit 0
   # # # Add Rodrigues space mesh
   $NEPER -S simulation.sim -orispace $SCRIPTPATH"/output/rod.msh" -resmesh odfn
   # # # Generate orientation averaged equivalent stress and strain values
@@ -62,20 +77,16 @@ if [ "${mesh_plots}" == true ]
     -loop STEP $2 $3 $4 \
     -step STEP\
     -datanodecoo coo \
-    -datanodecoofact 2 \
+    -datanodecoofact $coo_fact \
     -dataelt3dcol strain_eq \
     -dataeltscaletitle "Strain eqv. (-)" \
-    -dataeltscale 0.000:0.40\
-    -showelt3d all\
-    -showelt1d "elt3d_shown" \
-    -showcsys 0\
-    -cameraangle 17\
-    -print imgs/${1}_strain_STEP\
-    -showelt3d "y>=0.5" \
+    -dataeltscale 0.000:$max_strain\
+    $settings\
+    -print imgs/${1}_strain_STEP \
+    -showelt3d "y>=$y_cuttoff" \
     -showelt1d "elt3d_shown" \
     -print imgs/${1}_strain_STEP_int \
     -endloop >>neper_log
-
   # Read runtime from log file
   tail -n 3 neper_log | head -n 1
   echo "Info   : Generating mesh plot with element equivalent stress"
@@ -83,16 +94,13 @@ if [ "${mesh_plots}" == true ]
     -loop STEP $2 $3 $4 \
     -step STEP\
     -datanodecoo coo \
-    -datanodecoofact 2 \
+    -datanodecoofact $coo_fact \
     -dataelt3dcol stress_eq\
     -dataeltscaletitle "Stress eqv. (MPa)" \
-    -dataeltscale 0:600\
-    -showelt3d all\
-    -showelt1d "elt3d_shown" \
-    -showcsys 0\
-    -cameraangle 17\
+    -dataeltscale 0:$max_stress\
+    $settings\
     -print imgs/${1}_stress_STEP \
-    -showelt3d "y>=0.5" \
+    -showelt3d "y>=$y_cuttoff" \
     -showelt1d "elt3d_shown" \
     -print imgs/${1}_stress_STEP_int \
     -endloop >>neper_log
@@ -186,7 +194,7 @@ if [ "${rod_stress_plots}" == true ]
     -loop STEP $2 $3 $4 \
     -datanodecol "real:file(simulation.sim/results/mesh/${val_name}/${val_name}.stepSTEP)" \
     -datanodescaletitle "Stress eqv. (MPa)" \
-    -datanodescale 0:550\
+    -datanodescale 0:$max_stress\
     -dataeltcol from_nodes \
     -showelt3d all\
     -showelt1d all \
@@ -205,7 +213,7 @@ if [ "${rod_stress_plots}" == true ]
     -loop STEP $2 $3 $4 \
     -datanodecol "real:file(simulation.sim/results/mesh/${val_name}/${val_name}.stepSTEP)" \
     -datanodescaletitle "Stress eqv. (MPa)" \
-    -datanodescale 0:550\
+    -datanodescale 0:$max_stress\
     -dataeltcol from_nodes \
     -showelt3d all\
     -showelt1d all \
@@ -233,7 +241,7 @@ if [ "${rod_strain_plots}" == true ]
     -loop STEP $2 $3 $4 \
     -datanodecol "real:file(simulation.sim/results/mesh/${val_name}/${val_name}.stepSTEP)" \
     -datanodescaletitle "Strain eqv. (-)" \
-    -datanodescale 0.000:0.375\
+    -datanodescale 0:$max_strain\
     -showelt3d all\
     -dataeltcol from_nodes \
     -showelt1d all \
@@ -252,7 +260,7 @@ if [ "${rod_strain_plots}" == true ]
     -loop STEP $2 $3 $4 \
     -datanodecol "real:file(simulation.sim/results/mesh/${val_name}/${val_name}.stepSTEP)" \
     -datanodescaletitle "Strain eqv. (-)" \
-    -datanodescale 0.000:0.375\
+    -datanodescale 0:$max_strain\
     -showelt3d all\
     -dataeltcol from_nodes \
     -showelt1d all \
@@ -269,6 +277,7 @@ if [ "${rod_strain_plots}" == true ]
   # Read runtime from log file
   tail -n 3 neper_log | head -n 1
 fi
+
 # tail -n 3 neper_log | head -n 1
 echo "Info   : ---------------------------------------------------------------"
 echo "Info   : done!"
